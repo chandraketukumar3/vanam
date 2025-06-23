@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { FiMapPin, FiMap, FiInfo, FiAlertCircle, FiLoader } from "react-icons/fi";
+import styles from "./GeoTagging.module.css";
 
 interface GeoTaggingProps {
   onLocationUpdate?: (location: { lat: number; lng: number; name: string }) => void;
@@ -242,9 +243,7 @@ export default function GeoTagging({ onLocationUpdate, autoFetchLocation = false
             ) : currentLocation && mapUrl ? (
               <iframe 
                 src={mapUrl}
-                width="100%" 
-                height="100%" 
-                style={{ border: 'none' }}
+                className={styles.mapIframe}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"

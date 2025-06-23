@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { FiLoader } from "react-icons/fi";
 import { RiPlantLine } from "react-icons/ri";
+import styles from "./TreeSpeciesDetection.module.css";
 
 interface TreeSpeciesDetectionProps {
   imageUrl: string | null;
@@ -104,7 +105,7 @@ export default function TreeSpeciesDetection({
                 <div className="flex items-center gap-2 mt-1">
                   <div className="h-2 bg-primary rounded-full w-24 overflow-hidden">
                     <div 
-                      className="h-full bg-primary" 
+                      className={styles.confidenceBar}
                       style={{ width: `${detectionResults.species.confidence}%` }}
                     ></div>
                   </div>

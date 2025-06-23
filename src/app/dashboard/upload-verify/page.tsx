@@ -243,6 +243,8 @@ export default function UploadVerifyPage() {
                 type="file"
                 accept="image/*"
                 className="hidden"
+                title="Upload tree image"
+                aria-label="Upload tree image"
                 onChange={handleFileUpload}
               />
               
