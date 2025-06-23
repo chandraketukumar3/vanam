@@ -1,0 +1,8 @@
+This directory contains placeholder files for testimonial images.
+In a real implementation, these would be actual JPG or PNG image files:
+
+ananya.jpg
+greenearth.jpg
+michael.jpg
+ecotech.jpg
+priya.jpg 

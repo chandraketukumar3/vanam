@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <!-- Background circle -->
+  <circle cx="50" cy="50" r="48" fill="#4CAF50" opacity="0.2" />
+  
+  <!-- Tree trunk -->
+  <rect x="45" y="60" width="10" height="30" rx="2" fill="#8B4513" />
+  
+  <!-- Tree leaves -->
+  <circle cx="50" cy="40" r="25" fill="#4CAF50" />
+  <circle cx="35" cy="45" r="15" fill="#66BB6A" />
+  <circle cx="65" cy="45" r="15" fill="#66BB6A" />
+  <circle cx="50" cy="30" r="15" fill="#81C784" />
+  
+  <!-- Vanam text -->
+  <text x="50" y="105" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#333">VANAM</text>
+</svg> 
