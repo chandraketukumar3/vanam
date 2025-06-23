@@ -68,19 +68,19 @@ export default function ContactSection() {
     {
       icon: <FiMail className="w-5 h-5" />,
       title: "Email Us",
-      details: "support@vanam.eco",
-      link: "mailto:support@vanam.eco",
+      details: "s8ulwizard1319@gmail.com",
+      link: "mailto:s8ulwizard1319@gmail.com",
     },
     {
       icon: <FiPhone className="w-5 h-5" />,
       title: "Call Us",
-      details: "+91 (800) 123-4567",
-      link: "tel:+918001234567",
+      details: "7520320900",
+      link: "tel:+917520320900",
     },
     {
       icon: <FiMapPin className="w-5 h-5" />,
       title: "Visit Us",
-      details: "123 Green Avenue, Bengaluru, India",
+      details: "sitamarhi, Bihar,India",
       link: "https://maps.google.com",
     },
   ];
