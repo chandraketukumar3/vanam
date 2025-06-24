@@ -136,6 +136,7 @@ export default function ProfilePage() {
       // Update the user profile in context/state
       if (updateUserProfile) {
         updateUserProfile({
+          id: user?.id || "",
           ...user,
           ...profileData,
           avatarUrl: avatarUrl || user?.avatarUrl
