@@ -9,7 +9,7 @@ const AnimatedNavLink = ({ href, children }: { href: string; children: React.Rea
 
   return (
     <a href={href} className={`group relative inline-block overflow-hidden h-5 flex items-center ${textSizeClass}`}>
-      <div className="flex flex-col transition-transform duration-400 ease-out transform group-hover:-translate-y-1/2">
+      <div className="flex flex-col transition-transform duration-400 transform group-hover:-translate-y-1/2">
         <span className={defaultTextColor}>{children}</span>
         <span className={hoverTextColor}>{children}</span>
       </div>
@@ -133,4 +133,4 @@ export function Navbar() {
       </div>
     </header>
   );
-} 
+}

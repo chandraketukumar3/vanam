@@ -26,7 +26,7 @@ export function FadeIn({
   threshold = 0.1,
 }: FadeInProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once, threshold });
+  const isInView = useInView(ref, { once });
 
   // Set the direction variants
   const directions = {
@@ -47,8 +47,7 @@ export function FadeIn({
       y: 0,
       transition: {
         duration,
-        delay,
-        ease: [0.22, 1, 0.36, 1], // Custom easing curve
+        delay
       },
     },
   };
@@ -130,8 +129,7 @@ export function ScrollZoom({
       opacity: 1,
       transition: {
         duration,
-        delay,
-        ease: [0.22, 1, 0.36, 1],
+        delay
       },
     },
   };
@@ -172,8 +170,7 @@ export function FloatingElement({
       transition: {
         repeat: Infinity,
         duration,
-        delay,
-        ease: "easeInOut",
+        delay
       },
     },
     vertical: {
@@ -181,8 +178,7 @@ export function FloatingElement({
       transition: {
         repeat: Infinity,
         duration,
-        delay,
-        ease: "easeInOut",
+        delay
       },
     },
     both: {
@@ -191,8 +187,7 @@ export function FloatingElement({
       transition: {
         repeat: Infinity,
         duration,
-        delay,
-        ease: "easeInOut",
+        delay
       },
     },
   };
@@ -230,8 +225,7 @@ export function RotatingElement({
       transition={{
         repeat: Infinity,
         duration,
-        delay,
-        ease: "easeInOut",
+        delay
       }}
       className={className}
     >
@@ -248,4 +242,4 @@ export function StickyScroll({ children }: { children: ReactNode }) {
       </div>
     </div>
   );
-} 
+}

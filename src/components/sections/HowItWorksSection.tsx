@@ -132,7 +132,7 @@ export default function HowItWorksSection() {
 
   return (
     <section id="how-it-works" className="py-20 bg-muted/30 overflow-hidden">
-      <Parallax speed={0.1} className="absolute inset-0 bg-gradient-to-b from-background to-muted/50 -z-10" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background to-muted/50 -z-10"></div>
       
       <div className="container mx-auto px-4">
         <ScrollZoom scale={0.92} duration={0.8}>
@@ -231,4 +231,4 @@ export default function HowItWorksSection() {
       </div>
     </section>
   );
-} 
+}
