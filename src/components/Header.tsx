@@ -40,7 +40,18 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      const scrollPosition = window.scrollY;
+      setIsScrolled(scrollPosition > 10);
+    };
+
+    const handleAuthModalEvent = (event: CustomEvent) => {
+      const { type, redirect } = event.detail;
+      if (type === 'login') {
+        setModalType(AuthModalType.Login);
+      } else if (type === 'signup') {
+        setModalType(AuthModalType.Signup);
+      }
+      setAuthModalOpen(true);
     };
     
     // Check if we're in dashboard mode
@@ -50,6 +61,7 @@ export default function Header() {
     
     checkDashboardMode();
     window.addEventListener("scroll", handleScroll);
+    document.addEventListener('open-auth-modal', handleAuthModalEvent as EventListener);
     
     // Create a mutation observer to detect dashboard mode changes
     const observer = new MutationObserver(checkDashboardMode);
@@ -57,6 +69,7 @@ export default function Header() {
     
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      document.removeEventListener('open-auth-modal', handleAuthModalEvent as EventListener);
       observer.disconnect();
     };
   }, []);
@@ -266,7 +279,10 @@ export default function Header() {
                       <Button 
                         variant="outline" 
                         size="sm" 
-                        onClick={() => useAuth().logout()}
+                        onClick={() => {
+                          const { logout } = useAuth();
+                          logout();
+                        }}
                         className="border-primary/30 hover:border-primary"
                       >
                         Log Out
@@ -303,4 +319,4 @@ export default function Header() {
       />
     </>
   );
-} 
+}

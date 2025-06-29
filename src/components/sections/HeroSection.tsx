@@ -4,9 +4,14 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence, Variants } from "framer-motion";
+import { useAuth } from "@/contexts/AuthContext";
+import { useRouter } from "next/navigation";
 
 export default function HeroSection() {
   const [isLoaded, setIsLoaded] = useState(false);
+  const { isAuthenticated } = useAuth();
+  const router = useRouter();
+  const [authModalOpen, setAuthModalOpen] = useState(false);
 
   useEffect(() => {
     setIsLoaded(true);
@@ -180,7 +185,20 @@ export default function HeroSection() {
               variants={buttonVariants}
               whileHover="hover"
             >
-              <Button size="lg" className="rounded-full relative overflow-hidden group">
+              <Button 
+                size="lg" 
+                className="rounded-full relative overflow-hidden group"
+                onClick={() => {
+                  if (isAuthenticated) {
+                    router.push('/dashboard');
+                  } else {
+                    // Find the closest AuthModals component and open it
+                    document.dispatchEvent(new CustomEvent('open-auth-modal', {
+                      detail: { type: 'login', redirect: '/dashboard' }
+                    }));
+                  }
+                }}
+              >
                 <motion.span
                   animate={{ x: [0, 2, 0] }}
                   transition={{ 
@@ -320,4 +338,4 @@ export default function HeroSection() {
       </div>
     </section>
   );
-} 
+}
